@@ -12,16 +12,23 @@ class Kernel
     {
      
        $dispatcher = simpleDispatcher(function(RouteCollector $routeCollector){
-            $routeCollector->addRoute('GET','/',function(){
-                $content = '<h2>Hello World from Kernel</h2>';
-                return new Response(content:$content);
-            });
+            
+        
+            $routes = include BASE_PATH. '/routes/web.php';
+            // dump($routes);
+            foreach ($routes as $route) {
+               $routeCollector->addRoute(...$route); 
+            }
+            // $routeCollector->addRoute('GET','/',function(){
+            //     $content = '<h2>Hello World from Kernel</h2>';
+            //     return new Response(content:$content);
+            // });
 
-            $routeCollector->addRoute('GET', '/posts/{id:\d+}', function($routeParams) {
-                $content = "<h1>This is Post {$routeParams['id']}</h1>";
+            // $routeCollector->addRoute('GET', '/posts/{id:\d+}', function($routeParams) {
+            //     $content = "<h1>This is Post {$routeParams['id']}</h1>";
 
-                return new Response($content);
-            });
+            //     return new Response($content);
+            // });
 
        });
 

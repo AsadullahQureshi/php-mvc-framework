@@ -38,15 +38,26 @@ class Kernel
             $request->getPathInfo(),
         );
 
-        [$status, $handler, $vars] = $routeInfo;
+        // dump($routeInfo);
+        // [$status, $handler, $vars] = $routeInfo;
 
         // Call the handler, provided by the route info, in order to create a Response
-        return $handler($vars);
+        // return $handler($vars);
+
+
 
     //    dump($dispatcher);
         //create the dispatcher
         
         // opbtain the uri info
         // call the handler, provided by the route info, and in order to create a infor
+        [$status, [$controller, $method], $vars] = $routeInfo;
+
+        // Call the handler, provided by the route info, in order to create a Response
+        // $response = (new $controller())->$method($vars);
+        $response = call_user_func_array([new $controller, $method], $vars);
+        // dump($response);
+        return $response;
+
     }
 }

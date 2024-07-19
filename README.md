@@ -40,6 +40,12 @@ However, using Composer is recommended as you can easily keep the library up-to-
 docker compose exec app
 ```
 
+if you want to composer run your docker then this command is
+```php
+docker compose exec app composer update
+docker compose exec app composer dump-autoload
+```
+
 
 
 ### index.php

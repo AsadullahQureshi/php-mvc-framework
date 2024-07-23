@@ -1,0 +1,23 @@
+{
+    "name": "asad/php-framework-pro",
+    "description": "A PHP framework tutorial project",
+    "minimum-stability": "dev",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Asadullah Qureshi",
+            "email": "abduljabbarasadullah@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Asad\\Framework\\": "src/"
+        }
+    },
+    "require-dev": {
+        "symfony/var-dumper": "6.3.x-dev"
+    },
+    "require": {
+        "nikic/fast-route": "2.0.x-dev"
+    }
+}

@@ -3,10 +3,7 @@
 namespace Asad\Framework\Http;
 
 use Asad\Framework\Routing\Router;
-use FastRoute\RouteCollector;
 use HttpRequestMethodException;
-use OutOfBoundsException;
-
 use function FastRoute\simpleDispatcher;
 
 class Kernel

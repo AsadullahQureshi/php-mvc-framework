@@ -14,10 +14,19 @@
             "Asad\\Framework\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Asad\\Framework\\Tests\\": "tests/",
+             "PHPUnit\\Metadata\\": "vendor/phpunit/phpunit/src/Metadata",
+            "PHPUnit\\Metadata\\Annotation\\Parser\\": "vendor/phpunit/phpunit/src/Metadata/Parser/Annotation"
+        }
+    },
     "require-dev": {
-        "symfony/var-dumper": "6.3.x-dev"
+        "symfony/var-dumper": "6.3.x-dev",
+        "phpunit/phpunit": "^10.1"
     },
     "require": {
-        "nikic/fast-route": "2.0.x-dev"
+        "nikic/fast-route": "2.0.x-dev",
+        "psr/container": "2.0.x-dev"
     }
 }
